@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+	
+    .half-circle {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 120px; /* Adjust the size of the half circle as needed */
+      height: 60px; /* Adjust the size of the half circle as needed */
+      background: linear-gradient(to bottom, #fde9f2, #e14ea6);
+      border-radius: 0 0 0 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000000; /* Change the text color */
+      z-index: 1000; /* Ensure the half-circle is on top of other elements */
+	  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	  padding: 15px; /* Adjust the padding to move the text */
+	  text-align: right; /* Center the text */
+	  font-weight: bold;
+    }
+	
+	.half-circle:hover .info-bubble {
+      display: block;
+    }
+
+    .info-bubble {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      transform: translateX(0);
+      background-color: #f693be;
+      color: #000000;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+	
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: -100px; /* Adjust the distance from the half-circle */
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #3498db; /* Match the background color of the half-circle */
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 20px auto; /* Add 20px top and bottom margin */
+      padding: 20px;
+      background: linear-gradient(to bottom, #fde9f2, #e14ea6);
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .header img {
+      max-width: 150px;
+      height: auto;
+    }
+    
+    h1 {
+      font-size: 21px;
+      margin: 0;
+      color: #333;
+	  margin-Left: 150px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #000000;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    select {
+      height: 40px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .buttons button.submit {
+      background-color: #4CAF50;
+      color: white;
+      margin-right: 10px;
+    }
+    
+    .buttons button.cancel {
+      background-color: #4CAF50;
+      color: white;
+    }
+	.Subttoal-group {
+	 margin-top: 10px;
+	}
+	
+	.Images-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .Images-group img {
+      max-width: 250px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  
+    <div class="half-circle-container">
+      <div class="half-circle">
+        Only 24 Places Available!
+        <div class="info-bubble">
+          18 Seats At Limelight - Kelvin; 
+          8 Seats At Stikland - CPT
+        </div>
+        <div class="arrow"></div>
+      </div>
+    </div>
+  
+    <div class="header">
+      <h1>Depileve Product Training</h1>
+    </div>
+	
+	<div class="Images-group">
+	 <img src="https://i.ibb.co/TgFsrqr/Limelight-handsdown-merge.png" alt="Left Image">
+	 <img src="https://i.ibb.co/zJ5qNFh/Depileve.png" alt="Right Image">
+	</div>
+    
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone number:</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="venue">Venue:</label>
+        <select id="venue" name="venue" required>
+          <option value="">Select Venue</option>
+          <option value="venue1">Stikland - CPT</option>
+          <option value="venue3">Limelight - Kelvin</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="training-date">Training date and slot:</label>
+        <select id="training-date" name="training-date" required>
+          <option value="">Select Training Date and Slot</option>
+          <option value="date1">Date 1 - Slot A</option>
+          <option value="date2">Date 2 - Slot B</option>
+          <option value="date3">Date 3 - Slot C</option>
+        </select>
+      </div>
+      
+	<div>
+     <label for="myCheckbox">I Would Like A Kit:</label>
+     <input type="checkbox" id="myCheckbox" name="myCheckbox">
+	</div>
+	  
+	<div class="Subttoal-group">
+     <label for="subtotal">Subtotal  : R50.00</label>
+	</div>
+	  
+      <div class="buttons">
+        <button type="submit" class="submit">Submit</button>
+        <button type="button" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

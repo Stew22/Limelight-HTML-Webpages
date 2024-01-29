@@ -1,0 +1,377 @@
+<html>
+ <title> Sorbet Bath Bomb Pre-Order</title>
+ <head>
+  <!-- This is where any scripting will go if any  -->
+   <script>
+     function resetform() {
+	  location.reload(); // Refresh the page
+	 } 
+
+	 function showModal(message) {
+		document.getElementById('message').textContent = message;
+		document.getElementById('modal').style.display = 'block';
+	}
+   </script>
+   <!-- -->
+   	<script>
+	    //
+		document.addEventListener('DOMContentLoaded', function() {
+		  document.getElementById('modal').addEventListener('click', function(e) {
+			if (e.target === this) {
+			  this.style.display = 'none';
+			}
+		  });
+		});
+	</script>
+	<!-- -->
+  <style>
+  	 body {
+	 font-family: Arial, sans-serif;
+	}
+	
+	.Image_Container {
+	  justify-content:center;
+	  text-align: center;
+	  margin-top:20px;
+	  margin-bottom:20px;
+	  opacity: 0; /* Initial opacity set to 0 */
+	  animation: fade-in 2s ease-in-out forwards; /* Animation name, duration, timing function, and fill mode */
+	}
+
+    .Sorbet_Man_Pre_Order {
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		width : 750px;
+		padding: 20px;
+		justify-content: center;
+		text-align: center;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(10, 10, 10, 0.7);
+		background-color: rgba(255, 193, 204, 0.7);
+	} 		
+	 input[type="number"] , input[type="email"] , input[type="text"],input[type="tel"]{
+		background-color: rgba(255, 182, 193, 0.5);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+		margin-top:10px;
+		width: 95%;
+	 }
+	 
+	input[type="submit"], input[type="reset"] {
+		background-color: rgba(0, 174,88 , 0.6);
+		color: black;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+		margin-top:10px;
+	    }
+	 
+	 
+		button:hover,
+		 input[type="submit"]:hover {
+		 background-color: rgba(0, 174,88 , 0.9);
+		}
+		
+		button:hover,
+		 input[type="reset"]:hover {
+		 background-color: rgba(0, 174,88 , 0.9);
+		}
+		
+	   .buttons {
+		margin-top:10px;
+		text-align: left;
+		}
+		
+		.main_container{
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+		  min-height: 100vh;
+		  margin: 0;
+		  opacity: 0; /* Initial opacity set to 0 */
+	      animation: fade-in 2s ease-in-out forwards; /* Animation name, duration, timing function, and fill mode */
+		  margin-bottom: 20px;
+		}
+
+		@keyframes fade-in {
+		  from {
+			opacity: 0; /* Starting opacity */
+		  }
+		  to {
+			opacity: 1; /* Final opacity */
+		  }
+		}
+		
+		.modal {
+		  display: none;
+		  position: fixed;
+		  z-index: 1;
+		  inset: 0;
+		  overflow: auto;
+		  background-color: rgba(23, 23, 23, 0.5);
+		  backdrop-filter: blur(4px);
+		}
+		.modal-content {
+		  background-color: #fff;
+		  font-size: 16px;
+		  margin: 20% auto;
+		  padding: 20px;
+		  max-width: 400px;
+		  border-radius: 8px;
+		  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+		  text-align: center;
+		}
+		.close {
+		  color: #aaa;
+		  position: absolute;
+		  top: 10px;
+		  right: 10px;
+		  font-size: 24px;
+		  cursor: pointer;
+		}
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		}
+
+ </style>
+ </head>
+   <body>	  
+    <div class="Image_Container">
+	<img src="https://i.ibb.co/hg3SzTx/Sorbet.png" alt="sorbetHD" border="0" style="pointer-events: none;border-radius: 180px; box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);margin-bottom: 20px; width:250px; Height:150px; margin-left : 40px;" ></a>
+	</div>
+	  <div class="main_container">
+		<form class="Sorbet_Man_Pre_Order" id="Sorbet-Man-Pre-Order" method="POST" action="https://script.google.com/macros/s/AKfycby5CUzJ20JasBAyyHgVd_HalYXC_uYvqYqMMGaZfdpZw0SrOORXL9Qelpd2THEdKWJk/exec?callback=noRedirect">
+		
+		<!-- This is where we will collect Customer info --> 
+		
+		<div class= "Sorbet_Store_C" style="text-align : left;">
+		  <label for="Sorbet_Store" style="display: block;padding: 5px;"> <strong>Sorbet Store : </strong></label>
+		  <input type="text" class="store_input" Placeholder="Sorbet Store.." id="Sorbet_Store" name="Sorbet_Store" required style="color: black; margin-bottom : 20px;">
+		</div>
+
+		<div class= "Email_Adress_C" style="text-align : left;">
+		 <label for="Email_Adress" style="display: block;padding: 5px;"> <strong>Email Address : </strong></label>
+		  <input type="email" class="email_input" Placeholder="Email Adress..." id="Email_Adress" name="Email_Adress" required style="color: black; margin-bottom : 20px;">
+		</div>
+		
+		<div class= "Name_Of_Person_Placing_Order_C" style="text-align : left;">
+		 <label for="Name_Of_Person_Placing_Order" style="display: block;padding: 5px;"> <strong>Name Of Person Placing Order : </strong></label>
+		  <input type="text" class="Person_input" Placeholder="Name Of Person Placing Order..." id="Name_Of_Person_Placing_Order" name="Name_Of_Person_Placing_Order" required style="color: black; margin-bottom : 20px;">
+		</div>
+		
+		<div class= "Contact_Number_C" style="text-align : left;">
+		  <label for="Contact_Number" style="display: block;padding: 5px;"> <strong>Contact Number : </strong></label>
+		  <input type="tel" class="Number_input" Placeholder="Contact Number..." id="Contact_Number" name="Contact_Number" required style="color: black; margin-bottom : 20px;">
+		</div>
+		<!-- province will be a dropdown-->
+				 <div>
+				   <label for="Province" style="display: block; padding: 5px; text-align:left; margin-bottom :10px;"> <strong>Province : </strong></label>
+					<select id="Province" name="Province" style="background-color: rgba(255, 182, 193, 0.5); border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width : 100% ; height: 40px; margin-bottom:20px; width: 95%;">
+					 <option value="" disabled selected>Select Store Location</option>
+					 <option value="Gauteng">Gauteng</option>
+					 <option value="Free State">Free State</option>
+					 <option value="North West">North West</option>
+					 <option value="Northern Cape">Northern Cape</option>
+					 <option value="Western Cape">Western Cape</option>
+					 <option value="Eastern Cape">Eastern Cape</option>
+					 <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+					 <option value="Limpopo">Limpopo</option>
+					 <option value="Mpumalanga">Mpumalanga</option>
+					</select>
+				 </div>		
+	
+		<!-- image div -->
+		<div class="378159_Image">
+			<img src="https://i.ibb.co/8zFd2yC/one-in-a-melon.png" alt="ONE A MELON BATH BOMB 100G " border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius: 20px;">
+		</div>
+		<!-- image div -->
+		 <div class="Item_378159 _Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378159 " style="display: block;padding: 5px;"> <strong>Item Code : </strong>378159 </label>
+			  <label for="378159 " style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet One A Melon Bath Bomb 100G </label>
+			  
+			  <label for="378159 " style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378159 " style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378159" Placeholder="Qty Ordered" id="Item_378159" name="Item_378159" min="0"  style="color: black;">
+		 <!-- image div -->
+		 <div class="378162_Image">
+		  <img src="https://i.ibb.co/TTPntV0/appley-ever-after.png" alt="Appley Ever After Bath Bomb" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		 <!-- image div -->
+		  <div class="Item_378162 _Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378162 " style="display: block;padding: 5px;"> <strong>Item Code : </strong>378162 </label>
+			  <label for="378162 " style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Appley Ever After Bath Bomb</label>
+			  
+			  <label for="378162 " style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378162 " style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378162" Placeholder="Qty Ordered" id="Item_378162" name="Item_378162" min="0" style="color: black;">
+		 <!-- image div -->
+
+		 <div class="378164_Image">
+		  <img src="https://i.ibb.co/Fgr0C5f/donut-worry.png" alt="Sorbet Donut Worry Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378164_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378164 " style="display: block;padding: 5px;"> <strong>Item Code : </strong>378164</label>
+			  <label for="378164 " style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Donut Worry Bath Bomb 100G</label>
+			  
+			  <label for="378164 " style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378164 " style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378164" Placeholder="Qty Ordered" id="Item_378164" name="Item_378164" min="0" style="color: black;">
+		  
+		<div class="378168_Image">
+		  <img src="https://i.ibb.co/Fxzwm9M/donut-give-up.png" alt="Sorbet Donut Give Up Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378168_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378168" style="display: block;padding: 5px;"> <strong>Item Code : </strong>378168</label>
+			  <label for="378168" style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Donut Give Up Bath Bomb 100G</label>
+			  
+			  <label for="378168" style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378168" style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378168" Placeholder="Qty Ordered" id="Item_378168" name="Item_378168" min="0" style="color: black;">
+		  
+		<div class="378169_Image">
+		  <img src="https://i.ibb.co/ZB5Qzzy/chill-pill.png" alt="Sorbet Donut Give Up Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378169_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378169 " style="display: block;padding: 5px;"> <strong>Item Code : </strong>378169 </label>
+			  <label for="378169 " style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Chill Pill Bath Bomb 100G</label>
+			  
+			  <label for="378169 " style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378169 " style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378169" Placeholder="Qty Ordered" id="Item_378169" name="Item_378169" min="0" style="color: black;">
+		  
+		<div class="378172_Image">
+		  <img src="https://i.ibb.co/JzFyDzS/love-bomb.png" alt="Sorbet Donut Give Up Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378172_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378172" style="display: block;padding: 5px;"> <strong>Item Code : </strong>378172 </label>
+			  <label for="378172" style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Love Bomb Bath Bomb 100G </label>
+			  
+			  <label for="378172" style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378172" style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378172" Placeholder="Qty Ordered" id="Item_378172" name="Item_378172" min="0" style="color: black;">
+		  
+		  
+		<div class="378156_Image">
+		  <img src="https://i.ibb.co/nf3cnkW/just-peachy.png" alt="Sorbet Donut Give Up Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378156_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378156" style="display: block;padding: 5px;"> <strong>Item Code : </strong>378156 </label>
+			  <label for="378156" style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Just Peachy Bath Bomb 100G </label>
+			  
+			  <label for="378156" style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378156" style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378156" Placeholder="Qty Ordered" id="Item_378156" name="Item_378156" min="0" style="color: black;">
+		  
+		<div class="378226_Image">
+		  <img src="https://i.ibb.co/Tv0nzzy/happy-birthday.png" alt="Sorbet Donut Give Up Bath Bomb 100G" border="0" style="pointer-events: none; box-shadow: 0 0 10px rgba(23, 23, 23, 0.7); width: 272px; height: 272px; border-radius : 20px; margin-top:25px;">
+		 </div>
+		<!-- image div -->
+		  <div class="Item_378226_Container" style="padding: 5px; margin-top:20px; margin-bottom:20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); border-radius: 20px; border: 1px solid #A9a9a9;" >
+			  <label for="378226" style="display: block;padding: 5px;"> <strong>Item Code : </strong>378226  </label>
+			  <label for="378226" style="display: block;padding: 5px;"> <strong>Item Name : </strong>Sorbet Happy Birth Day Bath Bomb 100G </label>
+			  
+			  <label for="378226" style="display: block;padding: 5px;"> <strong>FP Price : </strong>R28.00 Inc VAT</label>
+			  <label for="378226" style="display: block;padding: 5px;"> <strong>RSP Price : </strong>R49.99 Each Inc VAT</label>
+	     </div>
+		  <input type="number" class="input_378226" Placeholder="Qty Ordered" id="Item_378226" name="Item_378226" min="0" style="color: black;">
+		  
+		  <!-- -->
+		  <div class="subtotal" style="text-align : left; margin-top:20px;">Subtotal: R0.00</div>
+		  <!-- -->
+		  <div class="Buttons">
+			<input type="submit" class="Submit_Button">
+			<input type="reset" class="Reset_Button" style="margin-left: 573px;" onclick="resetform()">
+		  </div>
+		</form>
+	  </div>
+	  <!-- -->
+	  <div id="modal" class="modal">
+		<div class="modal-content">
+		 <span id="close" class="close"></span>
+		<p id="message"></p>
+	  </div>
+	  <!-- -->
+	<script>
+		window.addEventListener('load', function() {
+		  var PostMessageValue = "Your Pre Order Has Been Placed Successfully!";
+		  var messagevalue = "Once You Have Submitted Your Order, Please Wait For The Confirmation Message! Please Click Anywhere To Continue  -  Please Note Closing Date For Pre - Orders Is The 20th October 2023"; // message to display
+
+		  setTimeout(function() {
+			showModal(`Note: ${messagevalue}`);
+		  }, 2000);
+		});
+
+	  window.addEventListener("load", function() {
+		const form = document.getElementById('Sorbet-Man-Pre-Order');
+		form.addEventListener("submit", function(e) {
+		  e.preventDefault();
+		  const data = new FormData(form);
+		  const action = e.target.action;
+		  fetch(action, {
+			method: 'POST',
+			body: data,
+		  })
+		  .then(() => {
+			showModal("Your Pre Order Has Been Placed Successfully!");
+		  })
+		  .catch(() => {
+			showModal("Error: Unable to submit your order."); 
+		  });
+		});
+	  });	
+	</script>
+	
+    <script>
+	  const prices = [28.00,28.00,28.00,28.00,28.00,28.00,28.00,28.00];
+	  const inputs = document.querySelectorAll("input[id^='Item']");
+	  const subtotalDiv = document.querySelector(".subtotal");
+	  
+	  for (let i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener("input", updateSubtotal);
+	  }
+	  
+	  function updateSubtotal() {
+		let total = 0;
+	  
+		for (let i = 0; i < inputs.length; i++) {
+		  const quantity = parseInt(inputs[i].value);
+		  const price = prices[i];
+	  
+		  if (!isNaN(quantity) && !isNaN(price)) {
+			const subtotal = quantity * price;
+			total += subtotal;
+		  }
+		}
+	  
+		const subtotalRand = total.toLocaleString("en-ZA", {
+		  style: "currency",
+		  currency: "ZAR"
+		});
+	  
+		subtotalDiv.textContent = `Subtotal: ${subtotalRand}`;
+	  }
+	</script>
+  </body>
+</html>

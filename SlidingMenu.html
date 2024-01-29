@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      overflow: hidden;
+      background-color: #f2f2f2;
+    }
+
+    #page-container {
+      display: flex;
+    }
+
+    #sidebar {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background: #2c3e50;
+      transition: left 0.3s ease, background 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: #ecf0f1;
+      overflow-y: auto; /* Enable vertical scroll */
+    }
+
+    #sidebar.expanded {
+      background: linear-gradient(to bottom, #485460, #2c3e50);
+    }
+
+    #sidebar-heading {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px;
+      background-color: #34495e;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #sidebar a {
+      display: block;
+      padding: 15px;
+      color: #ecf0f1;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    #sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    #sidebar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #ecf0f1;
+      background: none;
+      border: none;
+    }
+
+    #sidebar .separator {
+      height: 1px;
+      background-color: #ecf0f1;
+      margin: 10px 0;
+    }
+
+    #main-content {
+      transition: margin-left 0.3s ease;
+      padding: 20px;
+      margin-left: 0;
+      flex: 1;
+      margin: auto;
+      text-align: center;
+    }
+
+    .open-btn {
+      font-size: 24px;
+      cursor: pointer;
+      color: #2c3e50;
+      background-color: #ecf0f1;
+      border: none;
+      padding: 10px;
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .open-btn.hide {
+      display: none;
+    }
+
+    .open-btn:hover {
+      background-color: #bdc3c7;
+    }
+	
+    /* New styles for the time grid */
+    .time-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr); /* 10 columns for hours 8-17 */
+      grid-gap: 5px;
+      margin-top: 20px;
+    }
+
+    .time-block {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+	
+	/*div style for the new booking 
+	.blue {
+     background-color: blue;
+    }
+	
+  </style>
+</head>
+<body>
+
+<div class="open-btn" onclick="toggleSidebar()">☰</div>
+
+<div id="page-container">
+  <div id="sidebar">
+    <div id="sidebar-heading">Date</div>
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <div id="sidebar-links"></div>
+  </div>
+
+  <div id="main-content">
+    <!-- Main content goes here -->
+    <div class="time-grid">
+      <!-- Generate blocks for each hour -->
+      <div class="time-block">08:00</div>
+      <div class="time-block">09:00</div>
+      <div class="time-block">10:00</div>
+      <div class="time-block">11:00</div>
+      <div class="time-block">12:00</div>
+      <div class="time-block">13:00</div>
+      <div class="time-block">14:00</div>
+      <div class="time-block">15:00</div>
+      <div class="time-block">16:00</div>
+      <div class="time-block">17:00</div>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+    const openBtn = document.querySelector('.open-btn');
+
+    if (sidebar.style.left === '-250px') {
+      sidebar.style.left = '0';
+      sidebar.classList.add('expanded');
+      mainContent.style.marginLeft = '250px';
+      openBtn.classList.add('hide');
+    } else {
+      sidebar.style.left = '-250px';
+      sidebar.classList.remove('expanded');
+      mainContent.style.marginLeft = '0';
+      openBtn.classList.remove('hide');
+    }
+  }
+
+  function generateSidebarLinks() {
+    const sidebarLinksContainer = document.getElementById('sidebar-links');
+    const daysInMonth = getDaysInMonth(new Date().getFullYear(), new Date().getMonth() + 1);
+
+    // Clear existing links
+    sidebarLinksContainer.innerHTML = '';
+
+    // Generate links for each day excluding weekends
+    for (let day = 1; day <= daysInMonth; day++) {
+      const currentDate = new Date(new Date().getFullYear(), new Date().getMonth(), day);
+      const dayName = getDayName(currentDate.getDay());
+
+      // Exclude weekends (Saturday and Sunday)
+      if (dayName !== 'Saturday' && dayName !== 'Sunday') {
+        const fullDate = getFullDate(currentDate.getFullYear(), currentDate.getMonth() + 1, day);
+
+        // Create link element
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = fullDate;
+        link.onclick = toggleSidebar; // Close sidebar on click
+
+        // Create separator element
+        const separator = document.createElement('div');
+        separator.className = 'separator';
+
+        // Append link and separator to container
+        sidebarLinksContainer.appendChild(link);
+        sidebarLinksContainer.appendChild(separator);
+      }
+    }
+  }
+
+  // Get the number of days in a month
+  function getDaysInMonth(year, month) {
+    return new Date(year, month, 0).getDate();
+  }
+
+  // Get the day name
+  function getDayName(dayIndex) {
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return weekdays[dayIndex];
+  }
+
+  // Get the full date with day name
+  function getFullDate(year, month, day) {
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    return `${getDayName(new Date(year, month - 1, day).getDay())}, ${months[month - 1]} ${day}`;
+  }
+
+  // Generate sidebar links on page load
+  generateSidebarLinks();
+  
+// Get the time grid element
+const timeGrid = document.querySelector('.time-grid');
+
+// Generate a random booking
+const generateDummyBooking = () => {
+  const startTime = '08:00';
+  const endTime = '10:00';
+  const name = 'John Doe';
+  const phoneNumber = '1234567890';
+  const email = 'johndoe@example.com';
+
+  const bookingElement = document.createElement('div');
+  bookingElement.classList.add('time-block', 'booking','blue');
+  bookingElement.setAttribute('data-time', startTime);
+  
+  const startHour = parseInt(startTime.split(':')[0]);
+  const endHour = parseInt(endTime.split(':')[0]);
+  
+  bookingElement.style.gridColumn = `${startHour - 7} / ${endHour - 7}`;
+  
+  bookingElement.innerHTML = `
+    <div class="booking-details">
+      <div>Name: ${name}</div>
+      <div>Phone: ${phoneNumber}</div>
+      <div>Email: ${email}</div>
+    </div>
+  `;
+
+  timeGrid.appendChild(bookingElement);
+};
+
+// Call the function to generate the dummy booking
+generateDummyBooking();
+</script>
+</body>
+</html>
